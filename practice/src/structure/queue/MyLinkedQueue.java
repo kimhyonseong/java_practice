@@ -31,6 +31,7 @@ public class MyLinkedQueue extends MyLinkedList implements Queue {
         } else {
             String data = front.getData();
             front = front.next;
+            removeElement(0);
 
             if (front == null) {
                 rear = null;
