@@ -15,7 +15,7 @@ public class Student {
         this.major = subject;
     }
 
-    public void addSubject(Score score) {
+    public void addSubjectScore(Score score) {
         scoreList.add(score);
     }
 
