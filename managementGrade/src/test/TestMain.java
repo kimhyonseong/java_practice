@@ -18,6 +18,9 @@ public class TestMain {
         TestMain test = new TestMain();
         test.createSubject();
         test.createStudent();
+
+        GenerateGradeReport generateGradeReport = new GenerateGradeReport();
+        System.out.println(generateGradeReport.getReport());
     }
 
     public void createSubject() {

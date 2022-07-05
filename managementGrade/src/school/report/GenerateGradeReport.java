@@ -14,11 +14,16 @@ import java.util.ArrayList;
 public class GenerateGradeReport {
     School school = School.getInstance();
     public static final String TITLE = " 수강생 학점 \n";
-    public static final String HEADER = " 이름  |  학번  |중간과목|  점수 \n";
+    public static final String HEADER = " 이름\t| 학번 |중점과목|  점수 \n";
     public static final String LINE = "-----------------------------\n";
     private StringBuffer buffer = new StringBuffer();
 
     public String getReport() {
+        for (Subject subject:school.getSubjectList()) {
+            makeHeader(subject);
+            makeBody(subject);
+            makeFooter();
+        }
         return buffer.toString();
     }
 
@@ -37,11 +42,11 @@ public class GenerateGradeReport {
             Student student = studentList.get(i);
 
             buffer.append(student.getStudentName());
-            buffer.append("|");
+            buffer.append("\t|");
             buffer.append(student.getStudentId());
             buffer.append("|");
             buffer.append(student.getMajor().getSubjectName());
-            buffer.append("|");
+            buffer.append("\t|");
 
             getScoreGrade(student,subject);
             buffer.append("\n");
@@ -70,7 +75,7 @@ public class GenerateGradeReport {
                 buffer.append(score.getPoint());
                 buffer.append(":");
                 buffer.append(grade);
-                buffer.append(":");
+                buffer.append("|");
             }
         }
     }

@@ -6,7 +6,7 @@ public class Subject {
     private int subjectId;
     private String subjectName;
     private int gradeType;
-    private ArrayList<Student> studentList;
+    private ArrayList<Student> studentList = new ArrayList<>();
 
     public Subject() {}
     public Subject(String subjectName, int subjectId) {
