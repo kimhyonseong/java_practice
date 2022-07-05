@@ -21,8 +21,27 @@ public class HeapSort {
         array[i] = num;
     }
 
-    public void deleteHeap(int index) {
+    // 맨 위에가 사라짐
+    public int deleteHeap() {
+        int parent, child;
+        int data, tmp;
+        data = array[1];
+        tmp = array[SIZE];
+        SIZE--;
+        parent = 1;
+        child = 2;
 
+        while(child <= SIZE) {
+            if ((child < SIZE) && (array[child] > array[child+1])) {
+                child++;
+            }
+            if (tmp <= array[child]) break;
+            array[parent] = array[child];
+            parent = child;
+            child *= 2;
+        }
+        array[parent] = tmp;
+        return data;
     }
 
     public void printHeap() {
