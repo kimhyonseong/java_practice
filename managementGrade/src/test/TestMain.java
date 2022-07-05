@@ -11,6 +11,7 @@ public class TestMain {
     School goodSchool = School.getInstance();
     Subject korean;
     Subject math;
+    Subject dance;
 
     GenerateGradeReport gradeReport = new GenerateGradeReport();
 
@@ -26,7 +27,10 @@ public class TestMain {
     public void createSubject() {
         korean = new Subject("국어", Define.KOREAN);
         math = new Subject("수학",Define.MATH);
+        dance = new Subject("방송댄스",Define.DANCE);
+        dance.setGradeType(Define.PF_TYPE);
 
+        goodSchool.addSubject(dance);
         goodSchool.addSubject(korean);
         goodSchool.addSubject(math);
     }
@@ -55,6 +59,14 @@ public class TestMain {
         math.resister(s3);
         math.resister(s4);
         math.resister(s5);
+
+        dance.resister(s1);
+        dance.resister(s2);
+        dance.resister(s3);
+
+        addScoreForStudent(s1,dance,95);
+        addScoreForStudent(s2,dance,85);
+        addScoreForStudent(s3,dance,55);
 
         addScoreForStudent(s1,korean,95);
         addScoreForStudent(s2,korean,95);

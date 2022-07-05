@@ -3,6 +3,7 @@ package school.report;
 import grade.BasicEvaluation;
 import grade.GradeEvaluation;
 import grade.MajorEvaluation;
+import grade.PassFailEvaluation;
 import school.School;
 import school.Score;
 import school.Student;
@@ -58,7 +59,7 @@ public class GenerateGradeReport {
         ArrayList<Score> scoresList = student.getScoreList();
         int majorId = student.getMajor().getSubjectId();
 
-        GradeEvaluation[] gradeEvaluation = {new BasicEvaluation(),new MajorEvaluation()};
+        GradeEvaluation[] gradeEvaluation = {new BasicEvaluation(),new MajorEvaluation(),new PassFailEvaluation()};
 
         for(int i=0; i<scoresList.size(); i++) {
             Score score = scoresList.get(i);
@@ -66,10 +67,14 @@ public class GenerateGradeReport {
             if(score.getSubject().getSubjectId() == subject.getSubjectId()) {
                 String grade;
 
-                if (score.getSubject().getSubjectId() == majorId) {
-                    grade = gradeEvaluation[Define.SAB_TYPE].getGrade(score.getPoint());
+                if (subject.getGradeType() == Define.PF_TYPE) {
+                    grade = gradeEvaluation[Define.PF_TYPE].getGrade(score.getPoint());
                 } else {
-                    grade = gradeEvaluation[Define.AB_TYPE].getGrade(score.getPoint());
+                    if (score.getSubject().getSubjectId() == majorId) {
+                        grade = gradeEvaluation[Define.SAB_TYPE].getGrade(score.getPoint());
+                    } else {
+                        grade = gradeEvaluation[Define.AB_TYPE].getGrade(score.getPoint());
+                    }
                 }
 
                 buffer.append(score.getPoint());
