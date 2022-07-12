@@ -6,6 +6,7 @@ public class Main {
         HairDryer hairDryer = new HairDryer();
         main.connect(hairDryer);
 
+        // A -> B로 바꾸기 위해 어댑터 추가
         AirCon airCon = new AirCon();
         Elect110 socketAdapter = new SocketAdapter(airCon);
         main.connect(socketAdapter);
