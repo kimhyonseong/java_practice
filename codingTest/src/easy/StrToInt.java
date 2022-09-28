@@ -1,4 +1,6 @@
-class Solution {
+package easy;
+
+class StrToIntSolution {
     public int solution(String s) {
         int intForm = 0;
         //String[] arr = String.valueOf(s).split("");
@@ -23,9 +25,9 @@ class Solution {
     }
 }
 
-public class strToInt {
+public class StrToInt {
     public static void main(String[] args) {
-        Solution solution = new Solution();
+        StrToIntSolution solution = new StrToIntSolution();
 
         int result = solution.solution("-1234");
         System.out.println(result);
