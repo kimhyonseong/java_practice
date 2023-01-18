@@ -8,7 +8,7 @@ public class SerializationTest {
         Person person2 = new Person("김유신","상무이사");
 
         try(
-                FileOutputStream file = new FileOutputStream("serial.txt");
+                FileOutputStream file = new FileOutputStream("./src/serialize/serial.txt");
                 ObjectOutputStream objS = new ObjectOutputStream(file);
         ) {
             objS.writeObject(person1);
@@ -18,7 +18,7 @@ public class SerializationTest {
         }
 
         try(
-                FileInputStream file = new FileInputStream("serial.txt");
+                FileInputStream file = new FileInputStream("./src/serialize/serial.txt");
                 ObjectInputStream objS = new ObjectInputStream(file);
         ) {
             Person p1 = (Person)objS.readObject();
@@ -26,9 +26,7 @@ public class SerializationTest {
 
             System.out.println(p1);
             System.out.println(p2);
-        } catch (IOException e) {
-            System.out.println(e);
-        } catch (ClassNotFoundException e) {
+        } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }
     }
