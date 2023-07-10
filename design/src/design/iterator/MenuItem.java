@@ -8,6 +8,22 @@ public class MenuItem {
     this.price = price;
   }
 
+  public String getName() {
+    return name;
+  }
+
+  public String getDescription() {
+    return description;
+  }
+
+  public boolean isVegetarian() {
+    return vegetarian;
+  }
+
+  public double getPrice() {
+    return price;
+  }
+
   private String name;
   private String description;
   private boolean vegetarian;
