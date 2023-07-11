@@ -21,4 +21,8 @@ public class DinerMenuIterator implements Iterator<MenuItem> {
     position++;
     return menuItem;
   }
+
+  public void remove() {
+    throw new UnsupportedOperationException("메뉴 항목은 지우면 안 됩니다.");
+  }
 }
