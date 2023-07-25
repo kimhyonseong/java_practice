@@ -1,7 +1,8 @@
 package HeadFirst.proxy;
 
 public class NoQuarter implements State {
-  GumballMachine machine;
+  private static final long serialVersionUID = 2L;
+  transient GumballMachine machine;
 
   public NoQuarter(GumballMachine machine) {
     this.machine = machine;
