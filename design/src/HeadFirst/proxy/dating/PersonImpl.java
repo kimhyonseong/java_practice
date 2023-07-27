@@ -1,5 +1,7 @@
 package HeadFirst.proxy.dating;
 
+import java.lang.reflect.Proxy;
+
 public class PersonImpl implements Person{
   String name;
   String gender;
