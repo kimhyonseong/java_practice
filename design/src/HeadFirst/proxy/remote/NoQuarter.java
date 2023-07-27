@@ -1,4 +1,4 @@
-package HeadFirst.proxy;
+package HeadFirst.proxy.remote;
 
 public class NoQuarter implements State {
   private static final long serialVersionUID = 2L;

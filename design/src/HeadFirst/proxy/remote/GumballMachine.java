@@ -1,4 +1,4 @@
-package HeadFirst.proxy;
+package HeadFirst.proxy.remote;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;

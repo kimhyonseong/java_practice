@@ -1,4 +1,4 @@
-package HeadFirst.proxy;
+package HeadFirst.proxy.remote;
 
 public class SoldOutState implements State {
   GumballMachine machine;

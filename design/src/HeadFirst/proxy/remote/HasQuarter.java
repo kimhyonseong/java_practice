@@ -1,4 +1,4 @@
-package HeadFirst.proxy;
+package HeadFirst.proxy.remote;
 
 public class HasQuarter implements State {
   GumballMachine machine;
